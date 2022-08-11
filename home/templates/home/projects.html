@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container py-5 mt-5 text-center">
+        <div class="text-center">
+            <h1 class="c-heading">PROJECTS</h1>
+        </div>
+    </div>
+    <section class="p-5">
+        <div class="row text-center">
+
+        {% for project in projects %}
+
+        {% if forloop.counter0|divisibleby:2 %}
+            <div class="col-md-4 offset-md-2 mb-5">
+
+        {% else %}
+            <div class="col-md-4 mb-5">
+        {% endif %}
+        
+                <a href="{% url 'home-project' project.id %}"><img src="{{ project.image.url }}" alt="" class="rounded img-fluid mb-4" width="300px"></a>
+                <h5 class="c-subtitle">{{ project.title }}</h5>
+                <p class="c-text2">{{ project.caption }}</p>
+                {% for tag in project.tags.all %}
+                <span class="badge ora mb-5"> {{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+
+    {% endblock content %}

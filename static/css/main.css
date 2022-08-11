@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500&family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/*Reusable custom text tags */
+.c-text {
+    font-family: 'Hind', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+}
+.c-text2{
+    font-family: 'Hind', sans-serif;
+    font-weight: 400;
+}
+.c-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 3em;
+    letter-spacing: 1.5px;
+    margin-bottom: 4vh;
+
+}
+.c-subtitle {
+    font-family: 'Hind', sans-serif;
+    font-weight: 500;
+}
+.c-heading{
+    font-size: 2em;
+    letter-spacing: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+/*===========================================================*/
+/* Landing + Navbar */
+body::-webkit-scrollbar{
+    display: none;
+}
+h2.landing{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 8px;
+    overflow: hidden;
+    background: linear-gradient(90deg, black, white, black);
+    background-repeat: no-repeat;
+    animation-iteration-count: 2;
+    background-size: 80%;
+    animation: animate 4s forwards linear;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+@keyframes animate{
+    0%{
+        background-position: -500%;
+    
+    }
+    99.9%{
+        -webkit-text-fill-color: transparent;
+    }
+    100%{
+        -webkit-text-fill-color: black;
+        background-position: 500%;
+    }
+}
+
+h2.loaded{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 8px;
+    overflow: hidden;
+
+}
+div.center {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    height: 15vh;
+    top: -20vh;
+    font-family: 'Hind', sans-serif;
+    font-weight: 300;
+    font-size: 1.25em;
+    letter-spacing: 1.5px;
+    color: white;
+    animation: animate2 2s forwards 3.5s;
+
+}
+
+@keyframes animate2 {
+    from {
+        top: -20vh;
+        color: white;
+    }
+    to{
+        top: -35vh;
+        color: #ff9447;
+    }
+}
+
+.bar {
+    position: relative;
+    top: -100px; 
+    animation: animate3 2s forwards 3.25s;
+}
+
+@keyframes animate3{
+    from {
+        top: -100px;
+    }
+    to{
+        top: 0px;
+    }
+}
+
+ul.navbar-nav li{
+    text-transform: uppercase;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+
+#contact{
+    font-weight: 500;
+    color: orange
+}
+
+/*===========================================================*/
+/*Profile */
+/* for all <a> tags with hover1 class, within a class=container ancestor 
+.container a.hover1:hover{
+    color:orange;
+}*/
+.bg-orange {
+    background-color:#ffc87a;
+    
+}
+img.resize {
+    width: 350px;
+    height: auto;
+    border-radius: 50%;
+    margin: auto;
+    display:block;
+    /*border: 6px solid black;*/
+}
+a i.icon_size{
+    font-size: 1.75em;
+    margin-bottom: 0.5em;
+    color:#212529;
+}
+
+/*===========================================================*/
+/*Projects + Footer*/
+
+.col-md-4 span.ora{
+    background-color: #ffc87a;
+    color: black;
+    font-weight: 500;
+}
+
+a i.icon_footer{
+    font-size: 1.75em;
+    margin-right: 0.5em;
+    color:#212529;
+
+}

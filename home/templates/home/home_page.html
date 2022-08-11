@@ -1,0 +1,84 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block tag %}bar{% endblock tag %}
+
+{% block content %}
+    <!--Profile Page-->
+    <div class="middle">
+        <h2 class ="landing" id="name">Derron Li</h2>
+    </div>
+    <div class="center">
+        <p>Software Engineer • Biomedical Engineer </p>
+    </div>
+
+    <section class="bg-orange p-5 mx-5 mb-5 text-center text-sm-start rounded">
+        <div class="container p-5">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6">
+                    <p class="c-subtitle" id="Hi">
+                        Hi there! I'm
+                    </p>
+                    <h1 class="c-title">Derron Li</h1>
+                    <div class="col-md-10">
+                        <p class="c-text2">
+                            Thanks for stopping by! I’m a current Software & Biomedical Engineering student at McMaster University <br>
+                            I aspire to bring my human-centred design principles to the tech world. And tackle challenges by using my <b>atypical background</b> to offer a unique, 
+                            <b>innovative perspective.</b> <br> My passion for software engineering stems from <em>that</em> feeling after building something from the ground up.<br>
+                            <br>
+                            <b>The favourites:</b> Python | HTML & CSS <br>
+                            <b>Other skills:</b> Django | Java | React | JavaScript | R  <br>
+                            <b>Interests:</b> Webdev | Biotech | Music | Snowboarding             
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <img class="img-fluid resize" src="{% static 'images/test123.jpg' %}" alt="Picture of me!">
+                </div>
+                <div class="col-md-1">
+                    <div class="row">
+                        
+                        <a href="https://linkedin.com/in/derronli" class="text-sm-end mb-3" target="_blank"><i class="uil uil-linkedin-alt icon_size"></i></a>
+                        <a href="https://github.com/derronli" class="text-sm-end mb-3" target="_blank"><i class="uil uil-github-alt icon_size"></i></a>
+                        <a onclick="copyEmail()" class="text-sm-end mb-3"><i class="uil uil-envelope-alt icon_size"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <a href="#footer" class="btn btn-outline-dark c-text2" role="button">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Highlighted Projects-->
+    <div class="container py-5 mt-5 text-center">
+        <div class="text-center">
+            <h1 class="c-heading">PROJECTS</h1>
+        </div>
+    </div>
+    <section class="p-5">
+        <div class="row text-center">
+        {% for project in projects %}
+
+        {% if forloop.counter0|divisibleby:2 %}
+            <div class="col-md-4 offset-md-2 mb-3">
+
+        {% else %}
+            <div class="col-md-4 mb-3">
+        {% endif %}
+        
+                <a href="{% url 'home-project' project.id %}"><img src="{{ project.image.url }}" alt="" class="rounded img-fluid mb-4" width="400px"></a>
+                <h5 class="c-subtitle">{{ project.title }}</h5>
+                <p class="c-text2">{{ project.caption }}</p>
+                {% for tag in project.tags.all %}
+                <span class="badge ora"> {{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+
+{% endblock content %}
