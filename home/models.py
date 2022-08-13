@@ -15,7 +15,7 @@ class Project(models.Model):
     caption = models.CharField(max_length=200, null=True, blank=True)
     content = models.TextField(null=True, blank=True)
     lessons = models.TextField(null=True, blank=True)
-    image = models.ImageField(null=True, blank=True, upload_to="images", default="test123.jpg")
+    image = models.ImageField(null=True, blank=True, upload_to="images", default="DL_logo.png")
     #takes tags from other model
     tags = models.ManyToManyField(Tag, null=True)
     featured = models.BooleanField(default=False)

@@ -22,9 +22,9 @@
                     <h1 class="c-title">Derron Li</h1>
                     <div class="col-md-10">
                         <p class="c-text2">
-                            Thanks for stopping by! I’m a current Software & Biomedical Engineering student at McMaster University <br>
-                            I aspire to bring my human-centred design principles to the tech world. And tackle challenges by using my <b>atypical background</b> to offer a unique, 
-                            <b>innovative perspective.</b> <br> My passion for software engineering stems from <em>that</em> feeling after building something from the ground up.<br>
+                            Thanks for stopping by! I’m a current Software & Biomedical Engineering student at McMaster University. <br>
+                            I aspire to bring my human-centred design principles to the tech world as a full-stack engineer. And tackle challenges by using my <b>atypical background</b> to offer 
+                            <b>unique perspectives.</b> <br> My passion for software engineering stems from <em>that</em> feeling after building something from the ground up.<br>
                             <br>
                             <b>The favourites:</b> Python | HTML & CSS <br>
                             <b>Other skills:</b> Django | Java | React | JavaScript | R  <br>
@@ -34,7 +34,7 @@
 
                 </div>
                 <div class="col-md-5">
-                    <img class="img-fluid resize" src="{% static 'images/test123.jpg' %}" alt="Picture of me!">
+                    <img class="img-fluid resize" src="{% static 'images/Smibe_photo.jpg' %}" alt="Picture of me!">
                 </div>
                 <div class="col-md-1">
                     <div class="row">
@@ -57,6 +57,7 @@
     <div class="container py-5 mt-5 text-center">
         <div class="text-center">
             <h1 class="c-heading">PROJECTS</h1>
+            <p class="c-text2">Learn more by clicking on each image!</p>
         </div>
     </div>
     <section class="p-5">
@@ -70,7 +71,7 @@
             <div class="col-md-4 mb-3">
         {% endif %}
         
-                <a href="{% url 'home-project' project.id %}"><img src="{{ project.image.url }}" alt="" class="rounded img-fluid mb-4" width="400px"></a>
+                <a href="{% url 'home-project' project.id %}"><img src="{{ project.image.url }}" alt="Project image" class="rounded img-fluid mb-4" width="400px"></a>
                 <h5 class="c-subtitle">{{ project.title }}</h5>
                 <p class="c-text2">{{ project.caption }}</p>
                 {% for tag in project.tags.all %}
@@ -80,5 +81,8 @@
         {% endfor %}
         </div>
     </section>
+    <div class="text-center">
+        
+    </div>
 
 {% endblock content %}
