@@ -1,37 +1,55 @@
-{% extends 'home/base.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'home/base.html' %} {% load static %} {% block content %}
 <!--Back/Forward Buttons-->
-<section class="m-5 mx-auto" style="width:60%;">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-2 mb-3">
-                <a href="{% url 'home-projects' %}" role="button" class="btn btn-outline-dark c-text2" style="background-color:#FFDC97; border:none;">&#60;&#60; Projects</a>
-            </div>
-            <div class="col-md-2 offset-md-8 mb-3">
-                <a href="#" role="button" class="btn btn-outline-dark c-text2" target="_blank" style="background-color:#FFDC97; border:none;">Github &#62;&#62;</a>
-            </div>
-        </div>
+<section class="m-5 mx-auto" style="width: 60%">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-2 mb-3">
+        <a
+          href="{% url 'home-projects' %}"
+          role="button"
+          class="btn btn-outline-dark c-text2"
+          style="background-color: #ffdc97; border: none"
+          >&#60;&#60; Projects</a
+        >
+      </div>
+      <div class="col-md-2 offset-md-8 mb-3">
+        <a
+          href="{{project.github_link}}"
+          role="button"
+          class="btn btn-outline-dark c-text2"
+          target="_blank"
+          style="background-color: #ffdc97; border: none"
+          >Github &#62;&#62;</a
+        >
+      </div>
     </div>
+  </div>
 
-    <!--Individual Project Info-->
-    <div class="pt-5 text-center">
-        <h5 class="c-heading">{{ project.title }}</h5>
-    </div>
-    <div class="p-4">
-        <p class="c-text2">
-            {{ project.content|linebreaks }}
-        </p>
-        <h5 class="c-subtitle mt-4" style="margin-bottom:0;">LESSONS LEARNED</h5>
-        <p class="c-text2">{{ project.lessons|linebreaks }}</p>
-    </div>
-    <div class="py-4 text-center">
-        <img src="{{ project.image.url }}" alt="" class="rounded mb-4 img-fluid" width="700px">
-    </div>
+  <!--Individual Project Info-->
+  <div class="pt-5 text-center">
+    <h5 class="c-heading">{{ project.title }}</h5>
+  </div>
+  <div class="p-4">
+    <p class="c-text2">{{ project.content|linebreaks }}</p>
+    <h5 class="c-subtitle mt-4" style="margin-bottom: 0">LESSONS LEARNED</h5>
+    <p class="c-text2">{{ project.lessons|linebreaks }}</p>
+  </div>
+  <div class="py-4 text-center">
+    <img
+      src="{{ project.image.url }}"
+      alt=""
+      class="rounded mb-4 img-fluid"
+      width="700px"
+    />
+  </div>
 
-    <div class="py-4 text-center">
-        <img src="{% static 'images/djangoDB4.png' %}" alt="" class="rounded mb-4 img-fluid" width="700px">
-    </div>
+  <div class="py-4 text-center">
+    <img
+      src="{% static 'images/djangoDB4.png' %}"
+      alt=""
+      class="rounded mb-4 img-fluid"
+      width="700px"
+    />
+  </div>
 </section>
 {% endblock content %}
