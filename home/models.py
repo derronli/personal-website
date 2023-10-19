@@ -16,6 +16,9 @@ class Project(models.Model):
     content = models.TextField(null=True, blank=True)
     lessons = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to="images", default="DL_logo.png")
+    # updates
+    github_link = models.URLField(blank=True, default='#')
+
     #takes tags from other model
     tags = models.ManyToManyField(Tag, null=True)
     featured = models.BooleanField(default=False)

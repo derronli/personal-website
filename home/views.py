@@ -5,7 +5,7 @@ from .models import Project
 # Create your views here.
 def home(request):
     #Filters class and keeps the featured projects
-    featured_projects = Project.objects.filter(featured=True)[0:2]
+    featured_projects = Project.objects.filter(featured=True) #[0:2]
     context = {'projects':featured_projects}
 
     return render(request, 'home/home_page.html', context)
